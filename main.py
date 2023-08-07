@@ -4,13 +4,19 @@ window = tk.Tk()
 window.title("My first GUI App")
 window.geometry("1000x600")
 
-myCanvas = tk.Canvas(window, bg = "lightblue", height = 300, width = 300)
-myCanvas.grid(row=0, column=0)
+frame1 = tk.Frame(window)
+frame1.grid(column=0, row=0, padx=10)
 
-myLine = myCanvas.create_line(50, 70, 220, 40, fill="blue")
+frame2 = tk.Frame(window)
+frame2.grid(column=1, row=0)
 
-myOval = myCanvas.create_oval(40, 75, 120, 150, fill="green")
+myText = tk.Text(frame1, height=10, width=20)
+myText.grid(column=0, row=0)
 
-myArc = myCanvas.create_arc(175, 145, 75, 200, start=0, extent=220, fill="yellow")
+myLabel = tk.Label(frame2, text="Hello World")
+myLabel.grid(column=0, row=0)
+
+myButton = tk.Button(frame2, text="Click here")
+myButton.grid(column=0, row=1)
 
 window.mainloop()
